@@ -64,7 +64,8 @@ private String[] data;
 	}
 	
 	private int partition(String[] list, int lowerIndex, int higherIndex){
-	        /*algorithm partition(A, lo, hi) is
+	    /*source: wikipedia
+	     * algorithm partition(A, lo, hi) is
 	    pivot := A[hi]
 	    i := lo     // place for swapping
 	    for j := lo to hi – 1 do
@@ -78,9 +79,9 @@ private String[] data;
 		int i = lowerIndex;
 		for(int j = lowerIndex; j < higherIndex; j++){
 			if(list[j].compareTo(pivot) <= 0){
-				String temp = list[j];//["a","b","c"],j=1,i=0, means temp = "b"
-				list[j] = list[i];// means "b" becomes "a" -> ["a","a","c"],
-				list[i] = temp;// means "a" becomes temp which is "b" - > ["b","a","c"],
+				String temp = list[j];
+				list[j] = list[i];
+				list[i] = temp;
 				i++;
 			}
 		}
@@ -93,7 +94,8 @@ private String[] data;
 	
 	private String[] quickSort(String[] list, int lowerIndex, int higherIndex)
 	{
-		/*algorithm quicksort(A, lo, hi) is
+		/*source: wikipedaphilia
+		 * algorithm quicksort(A, lo, hi) is
 	    if lo < hi then
 	        p := partition(A, lo, hi)
 	        quicksort(A, lo, p – 1)
@@ -109,7 +111,8 @@ private String[] data;
 		
 	}
 	
-	public void quickSort(){//smart, convenient call
+	public void quickSort()
+	{
 		data = quickSort(data, 0, data.length - 1);
 	}
 	
